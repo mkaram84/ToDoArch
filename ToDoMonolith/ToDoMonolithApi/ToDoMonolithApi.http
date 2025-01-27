@@ -1,0 +1,6 @@
+@ToDoMonolithApi_HostAddress = http://localhost:5086
+
+GET {{ToDoMonolithApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
