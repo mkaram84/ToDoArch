@@ -7,6 +7,7 @@ public record TaskDto(Guid Id,
                       DateTime CreatedAt,
                       DateTime UpdatedAt,
                       TaskStatus Status,
+                      Guid UserId,
                       UserDto User);
 public record TaskToAddDto(string Title,
                            string Description,

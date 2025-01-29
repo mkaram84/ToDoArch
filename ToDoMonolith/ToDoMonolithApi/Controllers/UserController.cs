@@ -21,10 +21,10 @@ namespace ToDoMonolithApi.Controllers
             return Ok(_userCore.GetUsers());
         }
 
-        [HttpGet("{id:guid}")]
-        public ActionResult<UserDto> GetUser(Guid id)
+        [HttpGet("{userId:guid}")]
+        public ActionResult<UserDto> GetUser(Guid userId)
         {
-            return Ok(_userCore.GetUserByGuid(id));
+            return Ok(_userCore.GetUserByGuid(userId));
         }
 
         [HttpPost]
@@ -41,10 +41,10 @@ namespace ToDoMonolithApi.Controllers
             return (result == true) ? Ok(true) : BadRequest(false);
         }
 
-        [HttpDelete("{id:guid}")]
-        public ActionResult<bool> DeleteUser(Guid id)
+        [HttpDelete("{userId:guid}")]
+        public ActionResult<bool> DeleteUser(Guid userId)
         {
-            var result = _userCore.DeleteUser(id);
+            var result = _userCore.DeleteUser(userId);
             return (result == true) ? Ok(true) : BadRequest(false);
         }
     }
