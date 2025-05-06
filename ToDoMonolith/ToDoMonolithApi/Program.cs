@@ -10,7 +10,6 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddTransient<UserCore>();
-        builder.Services.AddAutoMapper(typeof(Program));
 
         // Add services to the container.
         builder.Services.AddDbContext<ToDoMonolithContext>(options =>

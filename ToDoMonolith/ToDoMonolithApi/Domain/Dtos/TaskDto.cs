@@ -8,14 +8,24 @@ public record TaskDto(Guid Id,
                       DateTime UpdatedAt,
                       TaskStatus Status,
                       Guid UserId,
-                      UserDto User);
+                      UserDto User)
+{
+    public TaskDto() : this(default, default, default, default, default, default, default, default, default) { }
+}
+
 public record TaskToAddDto(string Title,
                            string Description,
                            DateTime DueDate,
                            TaskStatus Status,
-                           Guid UserId);
+                           Guid UserId)
+{ 
+    public TaskToAddDto() : this(default, default, default, default, default) { }
+}
 public record TaskToUpdateDto(Guid Id,
                               string Title,
                               string Description,
                               DateTime DueDate,
-                              TaskStatus Status);
+                              TaskStatus Status)
+{ 
+    public TaskToUpdateDto() : this(default, default, default, default, default) { }
+}

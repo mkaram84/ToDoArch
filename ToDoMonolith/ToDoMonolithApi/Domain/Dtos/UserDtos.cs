@@ -7,13 +7,24 @@ public record UserDto(Guid Id,
                       string Password,
                       DateTime CreatedAt,
                       DateTime UpdatedAt,
-                      IEnumerable<Entities.Task> Tasks);
+                      IEnumerable<TaskDto> Tasks)
+{
+    public UserDto() : this(default, default, default, default, default, default, default, default) {}
+}
+
 public record UserToAddDto(string Name,
                            string Email,
                            string UserName,
-                           string Password);
+                           string Password)
+{
+    public UserToAddDto() : this(default, default, default, default) {}
+}
+
 public record UserToUpdateDto(Guid Id,
                               string Name,
                               string Email,
                               string UserName,
-                              string Password);
+                              string Password)
+{
+    public UserToUpdateDto() : this(default, default, default, default, default) {}
+}
