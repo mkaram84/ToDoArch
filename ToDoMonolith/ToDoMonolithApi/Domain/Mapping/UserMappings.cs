@@ -16,7 +16,7 @@ public static class UserMappings
             Password = user.Password,
             CreatedAt = user.CreatedAt,
             UpdatedAt = user.UpdatedAt,
-            Tasks = [.. user.Tasks.Select(task => new TaskDto
+            Tasks = user.Tasks?.Select(task => new TaskDto
             {
                 Id = task.Id,
                 Title = task.Title,
@@ -26,7 +26,7 @@ public static class UserMappings
                 UpdatedAt = task.UpdatedAt,
                 Status = task.Status,
                 UserId = task.UserId
-            })]
+            }).ToList()
         };
     }
 

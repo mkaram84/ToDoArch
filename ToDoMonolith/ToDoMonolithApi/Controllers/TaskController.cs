@@ -4,7 +4,7 @@ using ToDoMonolithApi.Domain.Dtos;
 
 namespace ToDoMonolithApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class TaskController : ControllerBase
     {
